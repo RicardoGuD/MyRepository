@@ -3,11 +3,11 @@
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*
-* C Source:         %template.c%
+* C Source:         %WindowLifter.c%
 * Instance:         RPL_1
 * %version:         2 %
-* %created_by:      uid02495 %
-* %date_created:    Fri Jan  9 14:38:03 2004 %
+* %created_by:      Ricardo Guerra %
+* %date_created:    Fri jun 22  2015 %
 *=============================================================================*/
 /* DESCRIPTION : C source template file                                       */
 /*============================================================================*/
@@ -19,7 +19,7 @@
 /*============================================================================*/
 /*  REVISION |   DATE      |                               |      AUTHOR      */
 /*----------------------------------------------------------------------------*/
-/*  1.0      | DD/MM/YYYY  |                               | Mr. Template     */
+/*  1.0      | 03/07/2015  |                               | Mr. Template     */
 /* Integration under Continuus CM                                             */
 /*============================================================================*/
 
@@ -129,6 +129,7 @@ void pinchEnable(void)
 						rub_AutoModeDown=ENABLE;
 						rub_ManualModeUp=0;
 						}
+		Delay(400);
 	}
 /**************************************************************
  *  Name                 :	changeWindowLvAuto
@@ -280,57 +281,52 @@ void manualDirectionDetector(void)
 		{
 		case LEVEL_0:
 			PTA = LEVEL0;
-		/*if(rub_PinchState)
-						{
-						rub_AutoModeDown=ENABLE;
-						rub_ManualModeUp=0;
-						}*/
 			rub_ManualModeDown=0;
 			break;
 		case LEVEL_1:
 				PTA = LEVEL1;
 				pinchEnable();
-				Delay(400);	
+			//	Delay(400);	
 			break;
 		case LEVEL_2:
 				PTA = LEVEL2;
 		pinchEnable();
-			Delay(400);
+		//	Delay(400);
 			break;
 		case LEVEL_3:
 				PTA = LEVEL3;
 		pinchEnable();
-			Delay(400);
+		//	Delay(400);
 			break;
 		case LEVEL_4:
 				PTA = LEVEL4;
 			pinchEnable();
-			Delay(400);
+			//Delay(400);
 			break;
 		case LEVEL_5:
  			PTA = LEVEL5;
 			pinchEnable();
-			Delay(400);
+		//	Delay(400);
 			break;
 		case LEVEL_6:
 				PTA = LEVEL6;
 		pinchEnable();
-			Delay(400);
+		//	Delay(400);
 			break;
 		case LEVEL_7:
 				PTA = LEVEL7;
 			pinchEnable();
-			Delay(400);
+		//	Delay(400);
 			break;
 		case LEVEL_8:
 				PTA = LEVEL8;
 			pinchEnable();
-			Delay(400);
+		//	Delay(400);
 			break;
 		case LEVEL_9:
 				PTA = LEVEL9;
 			pinchEnable();
-			Delay(400);
+		//	Delay(400);
 			break;
 		case LEVEL_10:
 				PTA = LEVEL10;

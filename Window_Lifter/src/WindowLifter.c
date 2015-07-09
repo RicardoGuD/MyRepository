@@ -147,10 +147,13 @@ void changeWindowLvAuto(void)
 						rub_AutoModeDown=ENABLE;
 						rub_AutoModeUp=0;
 						}
+					else
+						{
 					WindowLevel++;
+						}
 					}
-				else if(rub_AutoModeDown)
-					WindowLevel--;
+		else if(rub_AutoModeDown)
+				WindowLevel--;
 	}
 /**************************************************************
  *  Name                 :	Delay
@@ -183,8 +186,8 @@ T_UBYTE lub_MinimumButtonTimePinch = 0;
 			Delay(1);		
 			if(rub_CountButtonPinch >= MIN_TIME_PRESS )
 				{
-				rub_PinchState=ENABLE;
-				lub_MinimumButtonTimePinch = ENABLE;
+					rub_PinchState=ENABLE;
+					lub_MinimumButtonTimePinch = ENABLE;
 				}	
 			}
 			}
@@ -208,8 +211,10 @@ void automaticDirectionDetector(void)
 			}
 		else if(rub_AutoModeUp)
 			{
+			pinchDetect();
 			LED_DOWN_OFF;
 			LED_UP_ON;
+			
 			}
 		}
 /**************************************************************
@@ -285,48 +290,39 @@ void manualDirectionDetector(void)
 			break;
 		case LEVEL_1:
 				PTA = LEVEL1;
-				pinchEnable();
-			//	Delay(400);	
+				pinchEnable();	
 			break;
 		case LEVEL_2:
 				PTA = LEVEL2;
 		pinchEnable();
-		//	Delay(400);
 			break;
 		case LEVEL_3:
 				PTA = LEVEL3;
 		pinchEnable();
-		//	Delay(400);
 			break;
 		case LEVEL_4:
 				PTA = LEVEL4;
 			pinchEnable();
-			//Delay(400);
 			break;
 		case LEVEL_5:
  			PTA = LEVEL5;
 			pinchEnable();
-		//	Delay(400);
 			break;
 		case LEVEL_6:
 				PTA = LEVEL6;
 		pinchEnable();
-		//	Delay(400);
 			break;
 		case LEVEL_7:
 				PTA = LEVEL7;
 			pinchEnable();
-		//	Delay(400);
 			break;
 		case LEVEL_8:
 				PTA = LEVEL8;
 			pinchEnable();
-		//	Delay(400);
 			break;
 		case LEVEL_9:
 				PTA = LEVEL9;
 			pinchEnable();
-		//	Delay(400);
 			break;
 		case LEVEL_10:
 				PTA = LEVEL10;
@@ -375,7 +371,7 @@ void automaticWindowLevel(void)
 			case LEVEL_2:
 				PTA = LEVEL2;
 				Delay(400);
-					changeWindowLvAuto();
+				changeWindowLvAuto();
 				break;
 			case LEVEL_3:
 					PTA = LEVEL3;
@@ -608,7 +604,6 @@ void automaticMode(void)
 		{
 	automaticDirectionDetector();
 	
-	pinchDetect();
 	
 	automaticWindowLevel();
 	

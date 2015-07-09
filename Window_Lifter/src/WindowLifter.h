@@ -86,11 +86,11 @@ void automaticMode(void);
 
 /* Functions macros */
 
-#define LED_UP_ON SIU.GPDO[68].R = 0
-#define LED_DOWN_ON SIU.GPDO[69].R = 0
+#define LED_UP_ON SIU.GPDO[68].R = 1
+#define LED_DOWN_ON SIU.GPDO[69].R = 1
 
-#define LED_UP_OFF SIU.GPDO[68].R = 1
-#define LED_DOWN_OFF SIU.GPDO[69].R = 1
+#define LED_UP_OFF SIU.GPDO[68].R = 0
+#define LED_DOWN_OFF SIU.GPDO[69].R = 0
 
 #define INIT_PUSH_BUTTON1 SIU.PCR[64].R = 0x0100 
 #define INIT_PUSH_BUTTON2 SIU.PCR[65].R = 0x0100 
